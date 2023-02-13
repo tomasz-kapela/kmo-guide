@@ -1,0 +1,26 @@
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+theme: minima
+# theme: jekyll-theme-hacker
+# remote_theme: pages-themes/modernist@v0.2.0
+#remote_theme: pages-themes/cayman@v0.2.0
+#remote_theme: pages-themes/primer@v0.2.0
+#remote_theme: just-the-docs/just-the-docs
+
+plugins:
+# - jekyll-remote-theme # add this line to the plugins list if you already have one
+
+title: [Prognisk]
+description: [Programowanie niskopoziomowe]
+#show_downloads: [false]
+
+nav_external_links:
+  - title: Strona wykładu
+    url: https://ww2.ii.uj.edu.pl/~kapela/pn/
+  - title: Biblioteka ASM64_IO
+    url: https://tomasz-kapela.github.io/asm64_io/
+    hide_icon: true # set to true to hide the external link icon - defaults to false
+
