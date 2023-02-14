@@ -86,6 +86,17 @@ You can access it using path `/mnt/users/$USER/local/`.
 You can also access local files from another server, 
 e.g. to access local files from *nosal* on *truten* use `/mnt/users/$USER/local_nosal`.
 
+
+## HTTP access for users - `public_html`
+
+If you want to access your files via HTTP you can add them to `~/public_html` and use following URL:
+
+```
+http://users.capdnet.ii.uj.edu.pl/~<USERNAME>/
+```
+
+Your files need to be at least with read access for `others`.
+
 ## Repositories
 
 ### CAPD repositories - read-write accesss
@@ -133,13 +144,3 @@ git remote set-url origin <USERNAME>@repos.capdnet:/var/user_repos/<USERNAME>/gi
 
 To change git-svn repositories follow [link](http://stackoverflow.com/questions/5975667/how-to-switch-svn-repositories-using-git-svn)
 
-
-## `public_html` - HTTP access for users
-
-If you want to access your files via HTTP you can add them to `~/public_html` and use following URL:
-
-```
-http://users.capdnet.ii.uj.edu.pl/~<USERNAME>/
-```
-
-Your files need to be at least with read access for `others`.
