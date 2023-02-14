@@ -55,7 +55,7 @@ Please use **SSH Keys!!!** protected by **pass-phase**. Without them you need to
 
 You can follow this [sample tutorial](https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/).
 
-To generate a key pair (private and public) (by default stored as ~/.ssh/id_rsa[.pub]) and copy it to capdnet invoke
+In short, to generate a key pair (private and public) (by default stored as ~/.ssh/id_rsa[.pub]) and copy it to capdnet invoke
 
 ```bash
 ssh-keygen
