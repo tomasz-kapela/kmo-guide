@@ -62,7 +62,7 @@ ssh-keygen
 ssh-copy-id access-1
 ```
 
-To be prompted for key password only once per session add the following to ``~/.ssh/config`
+To be prompted for key password only once per session add the following to `~/.ssh/config`
 
 ```bash
 Host *
