@@ -199,7 +199,7 @@ File `script.pl`
 print( "Hello\n");
 exec(ls);
 ```
-### sbatch parameters in the script file
+### Example: sbatch parameters in the script file
 
 You can include `sbatch` parameters in the task file (./scriptWithParams.sh):
 
