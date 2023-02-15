@@ -4,7 +4,7 @@ title: Slurm
 navorder: 5
 ---
 
-# Slurm - workload menager
+# Slurm - workload manager
 
 SLURM is a system for queuing tasks on distributed clusters and allocating resources. 
 Each user can ask for any amount of resources (estimated operating time, number of processors, 
