@@ -98,4 +98,4 @@ Currently, there are three types of qos (served to srun or sbatch with -q falga)
 | big  | 7-00:00:00 | cpus:256 | 1 |
 
 The higher the priority value, the faster the task should get to run (i.e. the test is the fastest priority, because it has 100 and these tasks should be favored by the scheduler). However, determining the final priority of a task is not only based on priority, but on other factors, e.g. task size, availability of cores, etc.
-
+ 
