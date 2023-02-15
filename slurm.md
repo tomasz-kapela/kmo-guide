@@ -116,7 +116,7 @@ The higher the priority value, the faster the task should get to run (i.e. the t
 * *std{out,err}* are redirected to file *slurm-ID.out* in the current directory,   
 * the status of the task can be read using `squeue`.
 
-#### Parameters
+### Parameters
 
 If we do not give other arguments, our task will probably get one physical core for calculations (usually 2 logical in our case).
 
@@ -132,7 +132,7 @@ If we do not give other arguments, our task will probably get one physical core 
 |--time {days}-{hours} | if program may not stop for some reason (infinite loops) one can set up time limit.| 
 | -q {QoS} | a type of Quality of Service (QoS) in {normal, test, big} |
 
-### Interactive jobs `srun`
+## Interactive jobs `srun`
 
 A variation on the `srun` command is:
 
@@ -156,7 +156,7 @@ rysy1> exit
 slurmaccess>
 ```
 
-### Sending job to a calculation queue
+## Sending job to a calculation queue
 
 To send a file in batch mode, you need to create a script file that starts with `#!` followed by the path to an interpreter (e.g. `#!/bin/bash`, `#!/usr/bin/perl`, etc.) and then send it to the cluster
 
@@ -174,7 +174,7 @@ tail -n 200 -f slurm-307.out
 #  (i.e. outputs any appended data as the file grows) util `ctrl+C` is pressed.  
 ```
 
-#### Example: Bash script
+### Example: Bash script
 
 File `./myScript.sh`:  sample BASH script.
 
@@ -189,7 +189,7 @@ date
 
 By executing this file you will get information about available processors and RAM.
 
-#### Example: Perl script
+### Example: Perl script
 
 File `script.pl` 
 
@@ -199,7 +199,7 @@ File `script.pl`
 print( "Hello\n");
 exec(ls);
 ```
-#### sbatch parameters in the script file
+### sbatch parameters in the script file
 
 You can include `sbatch` parameters in the task file (./scriptWithParams.sh):
 
