@@ -164,7 +164,7 @@ To send a file in batch mode, you need to create a script file that starts with 
 sbatch –p kmo --mem 10G --cpus-per-task 32 ./myScript.sh
 ```
 
-Output from script is redirected to files **slurm-{jobID}.out|err|log**  
+Output from the script is redirected to a file **slurm-{jobID}.out** ( *.err for errors and *.log slurm logs)  
 
 To tack execution of the program you can view these files eg. with `tail` command
 
