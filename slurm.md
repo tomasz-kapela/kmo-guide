@@ -56,6 +56,7 @@ Hence, it is important that our programs save partial results from time to time,
 
 ## Commands to get information 
 
+
 ### `sinfo` reports the state of partitions and nodes
 
 ```bash
@@ -99,3 +100,144 @@ Currently, there are three types of qos (served to srun or sbatch with -q falga)
 
 The higher the priority value, the faster the task should get to run (i.e. the test is the fastest priority, because it has 100 and these tasks should be favored by the scheduler). However, determining the final priority of a task is not only based on priority, but on other factors, e.g. task size, availability of cores, etc.
  
+## Commands to schedule a job
+
+
+`srun -p {queue} job` 
+
+* calculations in an interactive mode, 
+* the output from programs is connected to our current console, 
+* the input is connected to the keyboard, 
+* we can kill the task by double pressing `ctrl + C` 
+
+`sbatch -p {queue} job`
+
+* sends a "batch" job to given queue, slurm gives us the job **ID**, and we immediately regain control over the terminal,
+* *std{out,err}* are redirected to file *slurm-ID.out* in the current directory,   
+* the status of the task can be read using `squeue`.
+
+#### Parameters
+
+If we do not give other arguments, our task will probably get one physical core for calculations (usually 2 logical in our case).
+
+
+| Parameter | Description|
+|---- |---- |
+| -p {queue}| *(required)* the partition (queue) |
+| job    | *(required)* the job to be scheduled (usually script that starts with `#!` followed by the path to an interpreter e.g. `#!/bin/sh`|
+| --cpus-per-task {n} |number of computational threads we request |
+| --mem {n}[G] | the amount of RAM in megabytes (gigabytes with G postfix) |
+| --time {minutes}  | how much time we anticipate to complete the task.  |
+|--time {hours}:{minutes}:{seconds} | |
+|--time {days}-{hours} | if program may not stop for some reason (infinite loops) one can set up time limit.| 
+| -q {QoS} | a type of Quality of Service (QoS) in {normal, test, big} |
+
+### Interactive jobs `srun`
+
+A variation on the `srun` command is:
+
+```bash
+srun -p {queue} --pty bash
+```
+
+Which basically allows us to log in to one of the cluster machines (node) and execute commands interactively, from an active terminal. 
+We can stop job with the usual exit command or `ctrl+D`.
+
+This can be useful when: testing programs before running the sbatch task or compiling programs, or using with singularity.
+
+```bash
+slurmaccess> srun --cpus-per-task 10 -p kmo --pty bash
+srun: slurm_job_submit: checking szczelir with partition kmo
+rysy1> singularity shell debian.sif
+Singularity> hostname
+rysy1
+Singularity> exit
+rysy1> exit
+slurmaccess>
+```
+
+### Sending job to a calculation queue
+
+To send a file in batch mode, you need to create a script file that starts with `#!` followed by the path to an interpreter (e.g. `#!/bin/bash`, `#!/usr/bin/perl`, etc.) and then send it to the cluster
+
+```bash
+sbatch –p kmo --mem 10G --cpus-per-task 32 ./myScript.sh
+```
+
+Output from script is redirected to files **slurm-{jobID}.out|err|log**  
+
+To tack execution of the program you can view these files eg. with `tail` command
+
+```bash
+tail -n 200 -f slurm-307.out         
+#  it prints last 200 lines and then follows 
+#  (i.e. outputs any appended data as the file grows) util `ctrl+C` is pressed.  
+```
+
+#### Example: Bash script
+
+File `./myScript.sh`:  sample BASH script.
+
+```bash
+#!/bin/bash
+date 
+hostname 
+cat /proc/cpuinfo > info-about-processors.txt 
+cat /proc/meminfo > info-about-ram.txt 
+date
+```
+
+By executing this file you will get information about available processors and RAM.
+
+#### Example: Perl script
+
+File `script.pl` 
+
+```perl
+#!/usr/bin/perl
+
+print( "Hello\n");
+exec(ls);
+```
+#### sbatch parameters in the script file
+
+You can include `sbatch` parameters in the task file (./scriptWithParams.sh):
+
+```bash
+#!/bin/bash 
+#SBATCH --time=12:00:00        # I expect task to finish in 12 hours 
+#SBATCH --cpus-per-task=10 
+#SBATCH --mem=1G 
+#SBATCH –-output=my-file-name.%j.txt   # %j means job-id 
+#SBATCH –-error=Very-bad-errors.%j.txt
+
+date 
+hostname 
+cat /proc/cpuinfo > info-o-processors.txt 
+cat /proc/meminfo > info-o-memory.txt date
+```
+
+Scheduling job is now much simplier:
+
+```bash
+sbatch –p kmo ./scriptWithParams.sh
+```
+
+At the following link you can read about various other parameters and hash variables {$VARIABLE} 
+that appear when executing scripts on the cluster. 
+They can be used to e.g. generate file names, etc.:
+
+[https://www.nrel.gov/hpc/eagle-batch-jobs.html](https://www.nrel.gov/hpc/eagle-batch-jobs.html)
+
+## Command to stop a task
+
+```bash
+scancel {job-id}
+```
+
+If you do not remember what our task number is, you can check it:
+
+```bash
+squeue –u {our-username}
+```
+
