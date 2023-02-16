@@ -123,14 +123,14 @@ If we do not give other arguments, our task will probably get one physical core 
 
 | Parameter | Description|
 |---- |---- |
-| -p {queue}| *(required)* the partition (queue) |
+| `-p {queue}`| *(required)* the partition (queue) |
 | job    | *(required)* the job to be scheduled (usually script that starts with `#!` followed by the path to an interpreter e.g. `#!/bin/sh`|
-| --cpus-per-task {n} |number of computational threads we request |
-| --mem {n}[G] | the amount of RAM in megabytes (gigabytes with G postfix) |
-| --time {minutes}  | how much time we anticipate to complete the task.  |
-|--time {hours}:{minutes}:{seconds} | |
-|--time {days}-{hours} | if program may not stop for some reason (infinite loops) one can set up time limit.| 
-| -q {QoS} | a type of Quality of Service (QoS) in {normal, test, big} |
+| `--cpus-per-task {n}` |number of computational threads we request |
+| `--mem {n}[G]` | the amount of RAM in megabytes (gigabytes with G postfix) |
+| `--time {minutes}`  | how much time we anticipate to complete the task.  |
+| `--time {hours}:{minutes}:{seconds}` | |
+| `--time {days}-{hours}` | if program may not stop for some reason (infinite loops) one can set up time limit.| 
+| `-q {QoS}` | a type of Quality of Service (QoS) in {normal, test, big} |
 
 ## Interactive jobs `srun`
 
