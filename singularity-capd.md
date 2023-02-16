@@ -7,6 +7,15 @@
 singularity run library://capdnet/capd/capd
 ```
 
+## Run capd image with slurm
+
+```bash
+user@slurmaccess:~$ srun -p cpu --cpus-per-task 40 --mem 20G --pty bash
+user@huawei:~$ singularity exec library://capdnet/capd/capd bash
+Singularity> 
+```
+
+
 ## Make your own Singularity image based on capd
 
 Prepare `myImage.def` file starting from this template
