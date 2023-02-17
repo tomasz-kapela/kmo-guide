@@ -9,7 +9,7 @@ nav_order: 9
 Project [capd-singularity-img](https://github.com/tomasz-kapela/capd-singularity-img) 
 creates Singularity images with preinstalled CAPD library. Visit project webpage for more details.
 
-CAPD images are available from oficial Singularity image library. Visit project [https://cloud.sylabs.io/library/capdnet](https://cloud.sylabs.io/library/capdnet) for available images.  
+CAPD images are available from official Singularity image library. Visit project [https://cloud.sylabs.io/library/capdnet](https://cloud.sylabs.io/library/capdnet) for available images.  
 
 
 ## Run capd image
