@@ -1,3 +1,9 @@
+---
+layout: default
+title: CAPD Singularity image
+nav_order: 9
+---
+
 # Singularity image with preinstalled CAPD library
 
 Project [capd-singularity-img](https://github.com/tomasz-kapela/capd-singularity-img) 
