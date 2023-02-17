@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Slurm
+title: SLURM @ WMiI
 navorder: 5
 ---
 
-# Slurm - workload manager
+# Slurm - workload manager at WMiI
 
 SLURM is a system for queuing tasks on distributed clusters and allocating resources. 
 Each user can ask for any amount of resources (estimated operating time, number of processors, 
