@@ -1,10 +1,15 @@
 # Singularity image with preinstalled CAPD library
 
+Project [capd-singularity-img](https://github.com/tomasz-kapela/capd-singularity-img) 
+creates Singularity images with preinstalled CAPD library. Visit project webpage for more details.
+
+CAPD images are available from oficial Singularity image library. Visit project [https://cloud.sylabs.io/library/capdnet](https://cloud.sylabs.io/library/capdnet) for available images.  
+
 
 ## Run capd image
 
 ```bash
-singularity run library://capdnet/capd/capd
+singularity shell library://capdnet/capd/capd
 ```
 
 ## Run capd image with slurm
@@ -20,19 +25,19 @@ Singularity>
 
 Prepare `myImage.def` file starting from this template
 
-```singularity
+```
 BootStrap: library
 From: capdnet/capd/capd:latest
 
-%file
-  # files to copy 
-
+%files
+  # files to copy: source destination 
+  # /path/to/local/file  /path/in/image
+  
 %post 
   # Installing your favourite software e.g. gdb
-	apt-get update
+  apt-get update
   apt-get install -y gdb
 	
-  
   # Your image tunning...  
 
 ```
