@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SLURM @ WMiI
-navorder: 5
+nav_order: 5
 ---
 
 # Slurm - workload manager at WMiI
