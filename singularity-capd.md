@@ -45,6 +45,6 @@ From: capdnet/capd/capd:latest
 Build your Singularity image
 
 ```bash
-singularity build myImage.sif myImage.def
+sudo singularity build myImage.sif myImage.def
 ```
 
