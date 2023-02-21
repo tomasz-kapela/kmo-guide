@@ -7,13 +7,20 @@ nav_order: 1
 # Katedra Matematyki Obliczeniowej
 
 ## Webpages
-* [KMO webpage](http://kmo.matinf.uj.edu.pl/index.php) (strona katedry KMO)
-* [MK studies webpage](mk.matinf.uj.edu.pl) Computational Mathematics studies (strona kierunku Matematyka Komputerowa).
+* [KMO webpage](http://kmo.matinf.uj.edu.pl/index.php) : strona Katedry Matematyki Obliczeniowej
+* [MK webpage](mk.matinf.uj.edu.pl) : strona kierunku Matematyka Komputerowa
+
+
+## Infrastructure 
+
+* [intra.matinf.uj.edu.pl](https://intra.matinf.uj.edu.pl/) : wydziałowy system informatyczny: dostęp, licencje, VPN
+* [CAPDnet cloud documentation](capdnet-docs.md)
+* [SLURM @ WMiI](slurm.md) : obliczeniowy system kolejkowy WMiI
+
 
 ## Software
 
 * [CAPD](http://capd.ii.uj.edu.pl)
+* [CAPD Singularity Image](https://github.com/tomasz-kapela/capd-singularity-img)
+* [CAPD Docker Image](https://github.com/tomasz-kapela/capd-docker-img)
 
-## Infrastructure 
-
-* [CAPDnet cloud documentation](capdnet-docs.md)
