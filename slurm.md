@@ -45,11 +45,11 @@ ssh <USER>@slurm.matinf.uj.edu.pl
 * *node* - compute resource e.g. server
 * *partition* - logical set of nodes (partitons can overlap). Partition can be seen as job queque with given parmeters: job time and memory limit, who has access to it.
 
-| partition| node | threads| 
-| ----  |---- | ---- |
-| cpu | huawei | 448 |
-| cpu | test01 | 16 |
-| kmo | rysy-1 | 144 |
+| partition| node | threads| RAM |max task RAM | 
+| ----  |---- | ---- | --- | --- |
+| cpu | huawei | 448 | 6TB | 2TB |
+| cpu | test01 | 16 | 6TB | 16GB |
+| kmo | rysy-1 | 144 | 1TB| 900GB |
 
 Currently, both partitions have a single task timeout of 7 days. 
 Hence, it is important that our programs save partial results from time to time, from which you can "restart" long-term calculations.
@@ -90,7 +90,7 @@ sacctmgr show qos - displays information about Quality of Serivce (types of task
 sacctmgr show qos format=name,priority
 ````
 
-Currently, there are three types of qos (served to srun or sbatch with -q falga):
+Currently, there are three types of qos (passed to `srun` or `sbatch` with `-q` flag):
 
 | Name  | maximum time | other restrictions | priority|
 |---- |---- |----- |----- | 
