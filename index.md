@@ -8,7 +8,7 @@ nav_order: 1
 
 ## Webpages
 * [KMO webpage](http://kmo.matinf.uj.edu.pl/index.php) : strona Katedry Matematyki Obliczeniowej
-* [MK webpage](mk.matinf.uj.edu.pl) : strona kierunku Matematyka Komputerowa
+* [MK webpage](http://mk.matinf.uj.edu.pl) : strona kierunku Matematyka Komputerowa
 
 
 ## Infrastructure 
