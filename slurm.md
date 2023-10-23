@@ -67,11 +67,14 @@ sinfo -o "%all"   # a lot of information in the table
 
 ### `squeue` reports the state of jobs 
 
-By default, it reports the running jobs in priority order and then the pending jobs in priority order.
+By default, [squeque](https://slurm.schedmd.com/squeue.html) 
+reports the running jobs in priority order and then the pending jobs in priority order.
 
 ```bash
 squeue                # displays all active tasks
 squeue -u {user-name} # displays the tasks of the given user
+# taks with allocated cpus and memory
+squeue -o"%.7i %.9P %.8j %.8u %.2t %.12M %.6D %.6C %10m %L"
 ```
 
 ### `scontrol`  displays the cluster configuration. 
