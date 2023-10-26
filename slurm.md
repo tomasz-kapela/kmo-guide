@@ -26,18 +26,18 @@ ssh <USER>@slurm.matinf.uj.edu.pl
 
 1. Connect first to one of the gateways e.g. `staff.matinf.uj.edu.pl`, `elf.ii.uj.edu.pl`
 2. Set up VPN connection. See [VPN instruction](https://intra.matinf.uj.edu.pl/intra,23). 
-3. **RECOMENDED** Set up [ssh proxy using capdnet](capdnet-docs.md) and connect password-less with ssh keys. 
+3. **RECOMENDED** Set up ssh proxy using one of the gateways and connect password-less with ssh keys ([more info](capdnet-docs.md)). 
    Under linux add the following lines to `~/.ssh/config` file
 
    ```bash
-   Host access-1 
-     user <capdnetUserName> 
-     hostname access-1.capdnet.ii.uj.edu.pl
-     
+   Host matinf
+	   user <facultyUserName>
+	   hostname staff.matinf.uj.edu.pl
+
    Host slurm 
      hostname slurm.matinf.uj.edu.pl 
      user <facultyUserName> 
-     ProxyCommand ssh -q -W %h:%p access-1
+     ProxyCommand ssh -q -W %h:%p matinf
    ```
  
 ## Architecture
