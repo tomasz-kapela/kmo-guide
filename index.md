@@ -20,7 +20,7 @@ nav_order: 1
 
 ## Software
 
-* [CAPD](http://capd.ii.uj.edu.pl)
-* [CAPD Singularity Image](https://github.com/tomasz-kapela/capd-singularity-img)
-* [CAPD Docker Image](https://github.com/tomasz-kapela/capd-docker-img)
+* [CAPD](http://capd.ii.uj.edu.pl) - oficjalna strona biblioteki CAPD
+* [CAPD Singularity Image](https://github.com/tomasz-kapela/capd-singularity-img) - obrazek Singularity z zainstalowaną biblioteką CAPD
+* [CAPD Docker Image](https://github.com/tomasz-kapela/capd-docker-img) - obrazek Dockera z zainstalowaną biblioteką CAPD
 
