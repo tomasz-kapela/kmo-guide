@@ -2,3 +2,4 @@
 
 Strona zbiera w jednym miejscu różne użyteczne informacje dla pracowników Katedry Matematyki Obliczeniowej
 
+[Strona kmo-guide](https://tomasz-kapela.github.io/kmo-guide/)
