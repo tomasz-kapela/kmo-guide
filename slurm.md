@@ -251,12 +251,12 @@ The `sbatch` accepts only name of the script (parameters has to be encoded insid
 #!/bin/bash
 HELP=<<EOH
 USAGE:
-  ./send_task queque script [arg1 arg2 ...]
-Sends script with given parameters to slurm queque 
+  ./send_task queue script [arg1 arg2 ...]
+Sends script with given parameters to slurm queue 
 EOH
 
 echo "Sending task: ${@:2}"
-echo "to queque: $1"
+echo "to queue: $1"
 
 if [ $# -lt 2 ]; then
 	echo $HELP
@@ -275,10 +275,10 @@ time ${@:2}
 exit 0
 EOT
 ```
-You can simply run any command with paramers e.g. `ls -la *.cpp` on slurm queque `kmo` by 
+You can simply run any command with paramers e.g. `ls -la *.cpp` on slurm queue `kmo` by 
 
 ```bash
-./send_task.sh queque command [arg1 arg2 ...]
+./send_task.sh queue command [arg1 arg2 ...]
 ./send_tash.sh kmo ls -la *.cpp
 ```
 
