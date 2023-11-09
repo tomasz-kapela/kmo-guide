@@ -1,8 +1,8 @@
 #!/bin/bash
 HELP=<<EOH
 USAGE:
-  ./send_task queque script [arg1 arg2 ...]
-Sends script with given parameters to slurm queque 
+  ./send_task queue script [arg1 arg2 ...]
+Sends script with given parameters to slurm queue 
 EOH
 
 if [ $# -lt 2 ]; then
@@ -10,12 +10,12 @@ if [ $# -lt 2 ]; then
         exit 0
 fi
 if [ "$1" != "kmo" ] && [ "$1" != "cpu" ]; then
-	echo "Slurm queque name has to be kmo or cpu."
+	echo "Slurm queue name has to be kmo or cpu."
 	exit 1
 fi	
 
 echo "Sending task: ${@:2}"
-echo "to queque: $1"
+echo "to queue: $1"
 
 sbatch -p $1 <<EOT
 #!/bin/bash
