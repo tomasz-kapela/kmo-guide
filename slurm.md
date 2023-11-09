@@ -216,8 +216,8 @@ You can include `sbatch` parameters in the task file (./scriptWithParams.sh):
 
 date 
 hostname 
-cat /proc/cpuinfo > info-o-processors.txt 
-cat /proc/meminfo > info-o-memory.txt date
+cat /proc/cpuinfo > info-processors.txt 
+cat /proc/meminfo > info-memory.txt date
 ```
 
 Scheduling job is now much simplier:
@@ -243,4 +243,43 @@ If you do not remember what our task number is, you can check it:
 ```bash
 squeue –u {our-username}
 ```
+## Sending series of tasks with different parameters
+
+The `sbatch` accepts only name of the script (parameters has to be encoded inside script). To avoid writing separate script for each set of parameters yous can use script [send_task.sh](utils/send_task.sh)
+
+```bash
+#!/bin/bash
+HELP=<<EOH
+USAGE:
+  ./send_task queque script [arg1 arg2 ...]
+Sends script with given parameters to slurm queque 
+EOH
+
+echo "Sending task: ${@:2}"
+echo "to queque: $1"
+
+if [ $# -lt 2 ]; then
+	echo $HELP
+        exit 0
+fi
+
+sbatch -p $1 <<EOT
+#!/bin/bash
+
+date
+echo "TASK ${@:2}"
+echo "------------------"
+
+time ${@:2}
+
+exit 0
+EOT
+```
+You can simply run any command with paramers e.g. `ls -la *.cpp` on slurm queque `kmo` by 
+
+```bash
+./send_task.sh queque command [arg1 arg2 ...]
+./send_tash.sh kmo ls -la *.cpp
+```
+
 
