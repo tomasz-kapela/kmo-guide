@@ -6,12 +6,13 @@ nav_order: 1
 
 # Katedra Matematyki Obliczeniowej
 
-## Webpages
+## Strony internetowe
 * [KMO webpage](http://kmo.matinf.uj.edu.pl/index.php) : strona Katedry Matematyki Obliczeniowej
 * [MK webpage](http://mk.matinf.uj.edu.pl) : strona kierunku Matematyka Komputerowa
+* [Egzaminator](https://egzaminator.matinf.uj.edu.pl/) : system do tworzenia i oceniania egzaminów [krótki opis](egzaminator.md)
 
 
-## Infrastructure 
+## Infrastruktura
 
 * [intra.matinf.uj.edu.pl](https://intra.matinf.uj.edu.pl/) : wydziałowy system informatyczny: dostęp, licencje, VPN
 * [CAPDnet cloud](capdnet-docs.md) : katedralna sieć capdnet: serwer rysy, svn, git, jenkins 
