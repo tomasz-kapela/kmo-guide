@@ -49,6 +49,7 @@ ssh <USER>@slurm.matinf.uj.edu.pl
 | ----  |---- | ---- | --- | --- |
 | cpu | huawei | 448 | 6TB | 2TB |
 | cpu | test01 | 16 | 6TB | 16GB |
+| kmo | rysy-0 | 128| 1TB| 900GB |
 | kmo | rysy-1 | 144 | 1TB| 900GB |
 
 Currently, both partitions have a single task timeout of 7 days. 
@@ -150,7 +151,7 @@ This can be useful when: testing programs before running the sbatch task or comp
 
 ```bash
 slurmaccess> srun --cpus-per-task 10 -p kmo --pty bash
-srun: slurm_job_submit: checking szczelir with partition kmo
+srun: slurm_job_submit: checking user with partition kmo
 rysy1> singularity shell debian.sif
 Singularity> hostname
 rysy1
