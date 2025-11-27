@@ -98,9 +98,11 @@ Currently, there are three types of qos (passed to `srun` or `sbatch` with `-q` 
 
 | Name  | maximum time | other restrictions | priority|
 |---- |---- |----- |----- | 
-| normal | 1-00:00:00| | 10| 
+| normal | 2-00:00:00| | 10| 
 | test | 0-01:00:00 | cpus:4,mem:16G |100|
-| big  | 7-00:00:00 | cpus:256 | 1 |
+| big  | 7-00:00:00 | cpus:384 | 1 |
+| big_long  | 30-00:00:00 | cpus:384 | 1 |
+
 
 The higher the priority value, the faster the task should get to run (i.e. the test is the fastest priority, because it has 100 and these tasks should be favored by the scheduler). However, determining the final priority of a task is not only based on priority, but on other factors, e.g. task size, availability of cores, etc.
  
