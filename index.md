@@ -15,7 +15,7 @@ nav_order: 1
 ## Infrastruktura
 
 * [intra.matinf.uj.edu.pl](https://intra.matinf.uj.edu.pl/) : wydziałowy system informatyczny: dostęp, licencje, VPN
-* [CAPDnet cloud](capdnet-docs.md) : katedralna sieć capdnet: serwer rysy, svn, git, jenkins 
+* [CAPDnet cloud](capdnet-docs.md) (nieaktualne): katedralna sieć capdnet: serwer rysy, svn, git, jenkins 
 * [SLURM @ WMiI](slurm.md) : obliczeniowy system kolejkowy WMiI
 
 
